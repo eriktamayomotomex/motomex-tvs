@@ -1,21 +1,34 @@
 import { useEffect } from "react";
 import { initializeGA } from "./utils/analytics";
+import HideAppBar from "./components/common/Navbar";
+import Timeline from "@/components/sections/Timeline";
 
 function App() {
-  
-
-    useEffect(() => {
+  useEffect(() => {
     initializeGA();
   }, []);
-  
+
   return (
     <>
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-3xl font-bold">Motomex TVS</h1>
-      <p>Bienvenido a la landing page oficial.</p>
-    </div>
+      {/* Barra de navegación */}
+      <HideAppBar />
+
+      {/* Sección Hero */}
+      <div id="hero" style={{ height: "100vh", background: "lightgray", paddingTop: "64px" }}>
+        <h1>Primera sección (Hero)</h1>
+      </div>
+
+      {/* Línea del Tiempo */}
+      <section id="timeline" style={{ background: "#f8f8f8", padding: "50px 20px" }}>
+        <Timeline />
+      </section>
+
+      {/* Sección de Contacto */}
+      <div id="contact-form" style={{ height: "100vh", background: "whitesmoke" }}>
+        <h2>Última sección (Formulario)</h2>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
