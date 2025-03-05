@@ -33,7 +33,7 @@ export default function Navbar(props: Props) {
   };
 
   return (
-    <>
+    <React.Fragment>
       <HideOnScroll {...props}>
         <AppBar
           position="fixed"
@@ -41,8 +41,6 @@ export default function Navbar(props: Props) {
             backgroundColor: "white",
             boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
             padding: "8px 16px",
-            height: "64px", // 🔹 Se asegura la altura de la navbar
-            justifyContent: "center",
           }}
         >
           <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -67,8 +65,7 @@ export default function Navbar(props: Props) {
           </Toolbar>
         </AppBar>
       </HideOnScroll>
-      {/* 🔹 Espaciado para que el contenido no quede oculto */}
-      <Toolbar sx={{ height: "64px" }} />
-    </>
+      <Toolbar />
+    </React.Fragment>
   );
 }

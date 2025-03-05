@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { initializeGA } from "./utils/analytics";
 import HideAppBar from "./components/common/Navbar";
 import Timeline from "@/components/sections/Timeline";
+import Hero from "./components/sections/Hero";
 
 function App() {
   useEffect(() => {
@@ -15,7 +16,7 @@ function App() {
 
       {/* Sección Hero */}
       <div id="hero" style={{ height: "100vh", background: "lightgray", paddingTop: "64px" }}>
-        <h1>Primera sección (Hero)</h1>
+        <Hero />
       </div>
 
       {/* Línea del Tiempo */}
